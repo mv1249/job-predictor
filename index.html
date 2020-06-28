@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Predictor</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 'number_project', 'average_montly_hours', 'time_spend_company',
+       'department', 'salary', 'satisfaction_level', 'last_evaluation'],
+      dtype='object') -->
+
+    <!-- sales          4140
+technical      2720
+support        2229
+IT             1227
+product_mng     902
+marketing       858
+RandD           787
+accounting      767
+hr              739
+management      630 -->
+    <!-- 2,157,3,7,1,0.38,0.53 -->
+    <!-- 	index	department	buying_encoded
+0	0	sales	      7
+1	1	technical	   9
+2	2	support   	8
+3	3	IT	        0
+4	4	product_mng	  6
+5	5	marketing	    5
+6	6	RandD	      1
+7	7	acounting   	2
+8	8	hr	        3
+9	9	management	   4
+10	10	hr     	3 -->
+
+    <div class="container">
+        <h2 class="text-center mt-3">EMPLOYEE STAY/QUIT JOB PREDICTOR</h2>
+
+        <form action="/" method="POST">
+            <div class="form-group">
+                <label for="projects">Enter number of projects</label>
+                <input type="text" class="form-control" name="projects" id="projects" placeholder="number of projects">
+            </div>
+            <div class="form-group">
+                <label for="monthly_hours">Enter montly hours</label>
+                <input type="text" class="form-control" name="monthly_hours" id="monthly_hours" placeholder="Enter monthly hours of work">
+            </div>
+            <div class="form-group">
+                <label for="timespend">Time spend in the company</label>
+                <input type="text" class="form-control" name="timespend" id="timespend" placeholder="Time spend in the company">
+            </div>
+            <div class="form-group">
+                <label for="department">Enter your department</label>
+                <select class="form-control" name="department" id="department">
+                  <option value ="7" >Sales</option>
+                  <option value ="9" >technical</option>
+                  <option value ="8" >Support</option>
+                  <option value ="0" >IT</option>
+                  <option value ="6" >product_mng</option>
+                  <option value ="5" >marketing</option>
+                  <option value ="1" >RandD</option>
+                  <option value ="2" >accounting </option>
+                  <option value ="3" >hr</option>
+                  <option value ="4" >management</option>
+                </select>
+            </div>
+
+            <!--   low    1
+1      medium    2
+2        high    0 -->
+            <div class="form-group">
+                <label for="salary">Type of salary</label>
+                <select class="form-control" name="salary" id="salary">
+                  <option value = "0">high</option>
+                  <option value = "1">low</option>
+                  <option value = "2">medium</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="satisfaction">Satisfaction Level</label>
+                <input type="text" class="form-control" name="satisfaction" id="satisfaction" placeholder="Enter the satisfaction level">
+            </div>
+
+
+            <!-- last evaluation -->
+
+
+            <div class="form-group">
+                <label for="last_evaluation">Last Evaluation</label>
+                <input type="text" class="form-control" name="last_evaluation" id="last_evaluation" placeholder="What was the last evaluation < floating point >">
+            </div>
+
+
+            <button class="btn btn-primary" type="submit">Predict</button>
+        </form>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+
+</html>
